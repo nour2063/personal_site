@@ -7,16 +7,11 @@ import { Bloom, EffectComposer } from "@react-three/postprocessing";
 import { easing } from 'maath'
 
 
-interface CameraRigProps {}
-
-function CameraRig(props: CameraRigProps) {
-    const ref = useRef<HTMLElement>(null!);
-
+function CameraRig() {
     useFrame((state, delta) => {
         easing.damp3(state.camera.position, [-1 + (state.pointer.x * state.viewport.width) / 3, (1 + state.pointer.y) / 2, 5.5], 0.5, delta);
         state.camera.lookAt(0, 0, 0);
     });
-
     return null; // You need to return something from the component
 }
 
