@@ -53,7 +53,10 @@ function Box(props: BoxProps) {
             ref={ref}
             scale={clicked ? 1.5 : 1}
             onClick={(event) => click(!clicked)}
-            onPointerOver={(event) => (event.stopPropagation(), hover(true))}
+            onPointerOver={(event) => {
+                event.stopPropagation();
+                hover(true)
+            }}
             onPointerOut={(event) => hover(false)}>
             <boxGeometry args={[1, 1, 1]} />
             <meshStandardMaterial color={hovered ? 'hotpink' : 'orange'} />
