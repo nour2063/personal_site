@@ -3,7 +3,7 @@ import { useRef, useState } from "react";
 import { Canvas, useFrame } from '@react-three/fiber'
 import { Mesh } from "three";
 import {MeshReflectorMaterial, BakeShadows, OrbitControls} from '@react-three/drei'
-import { Bloom, EffectComposer } from "@react-three/postprocessing";
+import {Bloom, EffectComposer} from "@react-three/postprocessing";
 import { easing } from 'maath'
 
 
@@ -18,19 +18,17 @@ function CameraRig() {
 function Ground() {
     return (
         <mesh receiveShadow rotation={[-Math.PI / 2, 0, 0]}>
-            <planeGeometry args={[50, 50]} />
+            <planeGeometry args={[50, 50]}/>
             <MeshReflectorMaterial
-                blur={[300, 30]}
-                resolution={2048}
-                mixBlur={1}
-                mixStrength={80}
-                roughness={1}
+                blur={[500, 100]}
+                resolution={512}
+                mixBlur={100}
+                mixStrength={2}
                 depthScale={1.2}
                 minDepthThreshold={0.4}
                 maxDepthThreshold={1.4}
-                color="#202020"
-                metalness={0.8}
-                mirror={1}
+                color={'rgba(95,104,117,0.25)'}
+                mirror={0.3}
             />
         </mesh>
     );
@@ -75,17 +73,17 @@ export default function Scene() {
             >
                 {/* Lights */}
                 <color attach="background" args={['#010E18']} />
-                <hemisphereLight intensity={3} groundColor="white" />
+                <hemisphereLight intensity={1} groundColor="white" />
                 <spotLight position={[10, 20, 10]} angle={0.12} penumbra={1} intensity={1} castShadow shadow-mapSize={1024} />
                 {/* Main scene */}
                 <group position={[-0, -1, 0]}>
                     <Box position={[-1.2, 0.75, 0]} />
                     <Box position={[1.2, 0.75, 0]} />
                     <Ground />
-                    <pointLight distance={100} intensity={5} position={[-0.15, 2.2, 0]} color="orange" />
+                    <pointLight distance={10} intensity={10} position={[-0.15, 2.2, 2]} color="orange" />
                 </group>
                 <EffectComposer disableNormalPass>
-                    <Bloom luminanceThreshold={0} mipmapBlur luminanceSmoothing={1} intensity={3} />
+                    <Bloom luminanceThreshold={0} mipmapBlur luminanceSmoothing={1} intensity={10} />
                 </EffectComposer>
                 {/* Camera movements */}
                 <CameraRig />
