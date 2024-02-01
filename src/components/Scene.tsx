@@ -7,13 +7,13 @@ import {Bloom, EffectComposer} from "@react-three/postprocessing";
 import { easing } from 'maath'
 
 
-function CameraRig() {
-    useFrame((state, delta) => {
-        easing.damp3(state.camera.position, [-1 + (state.pointer.x * state.viewport.width) / 3, (1 + state.pointer.y) / 2, 5.5], 0.5, delta);
-        state.camera.lookAt(0, 0, 0);
-    });
-    return null; // You need to return something from the component
-}
+// function CameraRig() {
+//     useFrame((state, delta) => {
+//         easing.damp3(state.camera.position, [-1 + (state.pointer.x * state.viewport.width) / 3, (1 + state.pointer.y) / 2, 5.5], 0.5, delta);
+//         state.camera.lookAt(0, 0, 0);
+//     });
+//     return null;
+// }
 
 function Ground() {
     return (
@@ -86,10 +86,10 @@ export default function Scene() {
                     <Bloom luminanceThreshold={0} mipmapBlur luminanceSmoothing={1} intensity={10} />
                 </EffectComposer>
                 {/* Camera movements */}
-                <CameraRig />
+                {/*<CameraRig />*/}
                 {/* Small helper that freezes the shadows for better performance */}
                 <BakeShadows />
-                <OrbitControls />
+                <OrbitControls minPolarAngle={1} maxPolarAngle={Math.PI/2} maxDistance={10} />
             </Canvas>
         </div>
     );
