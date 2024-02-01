@@ -1,10 +1,9 @@
 import styles from "../styles/Scene.module.css"
 import { useRef, useState } from "react";
-import { Canvas, useFrame } from '@react-three/fiber'
+import { Canvas } from '@react-three/fiber'
 import { Mesh } from "three";
 import {MeshReflectorMaterial, BakeShadows, OrbitControls} from '@react-three/drei'
 import {Bloom, EffectComposer} from "@react-three/postprocessing";
-import { easing } from 'maath'
 
 
 // function CameraRig() {
@@ -86,7 +85,7 @@ export default function Scene() {
                     <Bloom luminanceThreshold={0} mipmapBlur luminanceSmoothing={1} intensity={10} />
                 </EffectComposer>
                 {/* Camera movements */}
-                {/*<CameraRig />*/}
+                {/*<CameraRig />* //todo use these camera controls for final  /}
                 {/* Small helper that freezes the shadows for better performance */}
                 <BakeShadows />
                 <OrbitControls minPolarAngle={1} maxPolarAngle={Math.PI/2} maxDistance={10} />
