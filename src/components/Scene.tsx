@@ -1,9 +1,9 @@
 import styles from "../styles/Scene.module.css"
-import { useRef, useState } from "react";
+import { Box } from './Box'
 import { Canvas } from '@react-three/fiber'
-import { Mesh } from "three";
 import {MeshReflectorMaterial, BakeShadows, OrbitControls} from '@react-three/drei'
 import {Bloom, EffectComposer} from "@react-three/postprocessing";
+import {Sphere} from "./Sphere";
 
 
 // function CameraRig() {
@@ -33,34 +33,6 @@ function Ground() {
     );
 }
 
-interface BoxProps {
-    position: [number, number, number]
-}
-
-function Box(props: BoxProps) {
-
-    const ref = useRef<Mesh>(null!);
-
-    const [hovered, hover] = useState(false)
-    const [clicked, click] = useState(false)
-
-    return (
-        <mesh
-            {...props}
-            ref={ref}
-            scale={clicked ? 1.5 : 1}
-            onClick={(event) => click(!clicked)}
-            onPointerOver={(event) => {
-                event.stopPropagation();
-                hover(true)
-            }}
-            onPointerOut={(event) => hover(false)}>
-            <boxGeometry args={[1, 1, 1]} />
-            <meshStandardMaterial color={hovered ? 'hotpink' : 'orange'} />
-        </mesh>
-    )
-}
-
 export default function Scene() {
     return (
         <div className={styles.Scene}>
@@ -78,8 +50,9 @@ export default function Scene() {
                 <group position={[-0, -1, 0]}>
                     <Box position={[-1.2, 0.75, 0]} />
                     <Box position={[1.2, 0.75, 0]} />
+                    <Sphere position={[0, 3, 0]} />
                     <Ground />
-                    <pointLight distance={10} intensity={10} position={[-0.15, 2.2, 2]} color="orange" />
+                    <pointLight distance={10} intensity={10} position={[0, 3, 0]} color={'rgba(255,255,255,1)'} />
                 </group>
                 <EffectComposer disableNormalPass>
                     <Bloom luminanceThreshold={0} mipmapBlur luminanceSmoothing={1} intensity={10} />
