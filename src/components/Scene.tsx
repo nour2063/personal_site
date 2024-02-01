@@ -1,9 +1,8 @@
 import styles from "../styles/Scene.module.css"
 import { Box } from './Box'
 import {Canvas, useFrame} from '@react-three/fiber'
-import {MeshReflectorMaterial, BakeShadows, OrbitControls, PerspectiveCamera} from '@react-three/drei'
+import {MeshReflectorMaterial, BakeShadows} from '@react-three/drei'
 import {Bloom, EffectComposer} from "@react-three/postprocessing";
-import {EmissiveSphere, Sphere} from "./Sphere";
 import { easing } from 'maath';
 import {SphereSystem} from "./SphereSystem";
 
