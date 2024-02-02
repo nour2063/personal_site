@@ -46,7 +46,7 @@ export default function Scene() {
                 {/* Lights */}
                 <color attach="background" args={['#010E18']}/>
                 <hemisphereLight intensity={1} groundColor="white"/>
-                <pointLight distance={50} intensity={1.5} position={[0, 0, 0]} color={'white'}/>
+                <ambientLight intensity={0.5} position={[0, 0, 0]} color={'white'}/>
                 {/* Main scene */}
                 <group position={[-0, -2, 0]}>
                     <Box position={[0, 0.75, -1]}/>
