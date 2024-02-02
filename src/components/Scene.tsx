@@ -1,5 +1,5 @@
 import styles from "../styles/Scene.module.css"
-import { Box } from './Box'
+import { Block } from './Block'
 import {Canvas, useFrame} from '@react-three/fiber'
 import {MeshReflectorMaterial, BakeShadows} from '@react-three/drei'
 import {Bloom, EffectComposer} from "@react-three/postprocessing";
@@ -45,11 +45,11 @@ export default function Scene() {
             >
                 {/* Lights */}
                 <color attach="background" args={['#010E18']}/>
-                <hemisphereLight intensity={1} groundColor="white"/>
+                <hemisphereLight intensity={1.25} groundColor={'white'}/>
                 <ambientLight intensity={0.5} position={[0, 0, 0]} color={'white'}/>
                 {/* Main scene */}
                 <group position={[-0, -2, 0]}>
-                    <Box position={[0, 0.75, -1]}/>
+                    <Block position={[0, 0.75, 0]} args={[3, 1, 1]} />
                     <SphereSystem position={[0, 6, -10]}/>
                     <Ground/>
                 </group>

@@ -1,11 +1,13 @@
 import {useRef, useState} from "react";
 import {Mesh} from "three";
+import {RoundedBox} from "@react-three/drei";
 
 interface BoxProps {
     position: [number, number, number]
+    args: [number, number, number]
 }
 
-export function Box(props: BoxProps) {
+export function Block(props: BoxProps) {
 
     const ref = useRef<Mesh>(null!);
 
@@ -13,7 +15,7 @@ export function Box(props: BoxProps) {
     const [clicked, click] = useState(false)
 
     return (
-        <mesh
+        <RoundedBox
             {...props}
             ref={ref}
             scale={clicked ? 1.5 : 1}
@@ -23,8 +25,7 @@ export function Box(props: BoxProps) {
                 hover(true)
             }}
             onPointerOut={(event) => hover(false)}>
-            <boxGeometry args={[2, 1, 1]} />
             <meshStandardMaterial color={hovered ? 'hotpink' : 'orange'} />
-        </mesh>
+        </RoundedBox>
     )
 }

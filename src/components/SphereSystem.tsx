@@ -4,30 +4,43 @@ interface SphereSystemProps {
     position: [number, number, number]
 }
 
-function randomPosition() {
-    let num = Math.floor(Math.random()*4) + 1
-    num *= Math.round(Math.random()) ? 1 : -1
-    return num
+function getPosition(): [number, number, number] {
+    let x, y, z;
+    x = Math.floor(Math.random()*10) + 1
+    y = Math.floor(Math.random()*4) + 1
+    z = Math.floor(Math.random()*10) + 1
+    x *= Math.round(Math.random()) ? 1 : -1
+    y *= Math.round(Math.random()) ? 1 : -1
+    z *= Math.round(Math.random()) ? 1 : -1
+    return [x, y, z]
 }
 
-function randomSize() {
-    return Math.random() * 0.5
+function getSize() {
+    return (Math.random() * 0.2) + 0.1
+}
+
+function getColor(){
+    return "hsl(" + 360 * Math.random() + ',' + (100 + 70 * Math.random()) + '%,' + (80 + 10 * Math.random()) + '%)'
+}
+
+function makeOrbit(count: number) {
+    const elements = []
+    for (let i = 0; i < count; i++) {
+        elements.push(<Sphere
+            position={getPosition()}
+            color={getColor()}
+            size={[getSize(), 16, 32]}
+            intensity={0}/>
+        )
+    }
+    return elements
 }
 
 export function SphereSystem(props: SphereSystemProps) {
     return (
         <group position={props.position}>
-            <EmissiveSphere position={[0, 0, 0]} color={'orange'} intensity={20} size={[0.75, 16, 32]}/>
-            <Sphere position={[randomPosition(), randomPosition(), randomPosition()]} color={'rgb(255,168,254)'} size={[randomSize(), 16, 32]} intensity={0}/>
-            <Sphere position={[randomPosition(), randomPosition(), randomPosition()]} color={'rgb(100,218,255)'} size={[randomSize(), 16, 32]} intensity={0}/>
-            <Sphere position={[randomPosition(), randomPosition(), randomPosition()]} color={'rgb(129,255,158)'} size={[randomSize(), 16, 32]} intensity={0}/>
-            <Sphere position={[randomPosition(), randomPosition(), randomPosition()]} color={'rgb(255,127,127)'} size={[randomSize(), 16, 32]} intensity={0}/>
-            <Sphere position={[randomPosition(), randomPosition(), randomPosition()]} color={'rgb(156,98,255)'} size={[randomSize(), 16, 32]} intensity={0}/>
-            <Sphere position={[randomPosition(), randomPosition(), randomPosition()]} color={'rgb(213,255,88)'} size={[randomSize(), 16, 32]} intensity={0}/>
-            <Sphere position={[randomPosition(), randomPosition(), randomPosition()]} color={'rgb(145,167,255)'} size={[randomSize(), 16, 32]} intensity={0}/>
-            <Sphere position={[randomPosition(), randomPosition(), randomPosition()]} color={'rgb(118,255,199)'} size={[randomSize(), 16, 32]} intensity={0}/>
-            <Sphere position={[randomPosition(), randomPosition(), randomPosition()]} color={'rgb(255,82,179)'} size={[randomSize(), 16, 32]} intensity={0}/>
-            <Sphere position={[randomPosition(), randomPosition(), randomPosition()]} color={'rgb(255,199,111)'} size={[randomSize(), 16, 32]} intensity={0}/>
+            <EmissiveSphere position={[0, 0, 0]} color={'orange'} intensity={10} size={[0.5, 16, 32]}/>
+            {makeOrbit(50)}
         </group>
     )
 }

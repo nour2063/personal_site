@@ -25,7 +25,7 @@ export function EmissiveSphere(props: Props) {
                 position={props.position}
             >
                 <sphereGeometry args={props.size}/>
-                <meshBasicMaterial color={props.color}/>
+                <meshToonMaterial color={props.color}/>
             </mesh>
             <pointLight distance={20} intensity={props.intensity} position={props.position} color={'white'}/>
         </>
