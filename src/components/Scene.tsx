@@ -2,10 +2,9 @@ import styles from "../styles/Scene.module.css"
 import { Block } from './Block'
 import {Canvas, useFrame} from '@react-three/fiber'
 import {MeshReflectorMaterial, BakeShadows} from '@react-three/drei'
-import {Bloom, EffectComposer} from "@react-three/postprocessing";
+import {Bloom, EffectComposer, Outline, Vignette} from "@react-three/postprocessing";
 import { easing } from 'maath';
 import {SphereSystem} from "./SphereSystem";
-
 
 function CameraRig() {
     useFrame((state, delta) => {
@@ -21,13 +20,12 @@ function Ground() {
             <planeGeometry args={[100, 100]}/>
             <MeshReflectorMaterial
                 blur={[500, 100]}
-                resolution={256}
                 mixBlur={100}
-                mixStrength={2}
-                depthScale={1.2}
-                minDepthThreshold={0.4}
-                maxDepthThreshold={1.4}
-                color={'rgba(95,104,117,0.25)'}
+                mixStrength={20}
+                depthScale={10}
+                minDepthThreshold={3}
+                maxDepthThreshold={5}
+                color={'rgba(130,140,154,0.25)'}
                 mirror={0.3}
             />
         </mesh>
@@ -43,19 +41,20 @@ export default function Scene() {
                 camera={{position: [-1.5, 1, 5.5], fov: 45, near: 1, far: 20}}
                 eventPrefix="client"
             >
+                <EffectComposer disableNormalPass>
+                    <Bloom luminanceThreshold={0} mipmapBlur luminanceSmoothing={1} intensity={5} />
+                    <Vignette eskil={false} offset={0.05} darkness={0.75} />
+                    <Outline blur edgeStrength={100} />
+                </EffectComposer>
                 {/* Lights */}
-                <color attach="background" args={['#010E18']}/>
-                <hemisphereLight intensity={1.25} groundColor={'white'}/>
-                <ambientLight intensity={0.5} position={[0, 0, 0]} color={'white'}/>
+                <color attach="background" args={['#0e2c44']}/>
+                <hemisphereLight intensity={1} groundColor={'white'}/>
+                <SphereSystem position={[0, 4, -10]}/>
                 {/* Main scene */}
                 <group position={[-0, -2, 0]}>
-                    <Block position={[0, 0.75, 0]} args={[3, 1, 1]} />
-                    <SphereSystem position={[0, 6, -10]}/>
+                    <Block position={[0, 1, 0]} args={[3, 1, 1]} />
                     <Ground/>
                 </group>
-                <EffectComposer disableNormalPass>
-                    <Bloom luminanceThreshold={0} mipmapBlur luminanceSmoothing={1} intensity={10}/>
-                </EffectComposer>
                 {/* Camera movements */}
                 <CameraRig/>
                 {/* Small helper that freezes the shadows for better performance */}

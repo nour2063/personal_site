@@ -39,7 +39,7 @@ function makeOrbit(count: number) {
 export function SphereSystem(props: SphereSystemProps) {
     return (
         <group position={props.position}>
-            <EmissiveSphere position={[0, 0, 0]} color={'orange'} intensity={10} size={[0.5, 16, 32]}/>
+            <EmissiveSphere position={[0, 0, 0]} color={'orange'} intensity={5} size={[0.75, 16, 32]}/>
             {makeOrbit(50)}
         </group>
     )
