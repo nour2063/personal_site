@@ -7,7 +7,7 @@ interface SphereSystemProps {
 function getPosition(): [number, number, number] {
     let x, y, z;
     x = Math.floor(Math.random()*10) + 1
-    y = Math.floor(Math.random()*4) + 1
+    y = Math.floor(Math.random()*5) + 1
     z = Math.floor(Math.random()*10) + 1
     x *= Math.round(Math.random()) ? 1 : -1
     y *= Math.round(Math.random()) ? 1 : -1
@@ -20,7 +20,7 @@ function getSize() {
 }
 
 function getColor(){
-    return "hsl(" + 360 * Math.random() + ',' + (100 + 70 * Math.random()) + '%,' + (80 + 10 * Math.random()) + '%)'
+    return "hsl(" + 360 * Math.random() + ',' + 100 + '%,' + (80 + 10 * Math.random()) + '%)'
 }
 
 function makeOrbit(count: number) {
@@ -39,8 +39,8 @@ function makeOrbit(count: number) {
 export function SphereSystem(props: SphereSystemProps) {
     return (
         <group position={props.position}>
-            <EmissiveSphere position={[0, 0, 0]} color={'orange'} intensity={5} size={[0.75, 16, 32]}/>
-            {makeOrbit(50)}
+            <EmissiveSphere position={[0, 0, 0]} color={'orange'} intensity={5} size={[1, 16, 32]}/>
+            {makeOrbit(35)}
         </group>
     )
 }

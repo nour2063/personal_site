@@ -2,7 +2,6 @@ import styles from "../styles/Scene.module.css"
 import { Block } from './Block'
 import {Canvas, useFrame} from '@react-three/fiber'
 import {MeshReflectorMaterial, BakeShadows} from '@react-three/drei'
-import {Bloom, EffectComposer, Outline, Vignette} from "@react-three/postprocessing";
 import { easing } from 'maath';
 import {SphereSystem} from "./SphereSystem";
 
@@ -33,23 +32,20 @@ function Ground() {
 }
 
 export default function Scene() {
+
     return (
         <div className={styles.Scene}>
             <Canvas
                 shadows
                 dpr={[1, 1.5]}
-                camera={{position: [-1.5, 1, 5.5], fov: 45, near: 1, far: 20}}
+                camera={{position: [0, 0, 5.5], fov: 60, near: 1, far: 1}}
                 eventPrefix="client"
             >
-                <EffectComposer disableNormalPass>
-                    <Bloom luminanceThreshold={0} mipmapBlur luminanceSmoothing={1} intensity={5} />
-                    <Vignette eskil={false} offset={0.05} darkness={0.75} />
-                    <Outline blur edgeStrength={100} />
-                </EffectComposer>
                 {/* Lights */}
                 <color attach="background" args={['#0e2c44']}/>
                 <hemisphereLight intensity={1} groundColor={'white'}/>
-                <SphereSystem position={[0, 4, -10]}/>
+                <pointLight  />
+                <SphereSystem position={[0, 5, -10]}/>
                 {/* Main scene */}
                 <group position={[-0, -2, 0]}>
                     <Block position={[0, 1, 0]} args={[3, 1, 1]} />
