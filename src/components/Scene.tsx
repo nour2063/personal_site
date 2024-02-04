@@ -38,7 +38,7 @@ export default function Scene() {
             <Canvas
                 shadows
                 dpr={[1, 1.5]}
-                camera={{position: [0, 0, 5.5], fov: 60}}
+                camera={{position: [0, 0, 5.5], fov: 60, far: 30}}
                 eventPrefix="client"
             >
                 {/* Lights */}
