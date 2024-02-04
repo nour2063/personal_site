@@ -1,6 +1,6 @@
 import {useRef, useState} from "react";
 import {Mesh} from "three";
-import {RoundedBox} from "@react-three/drei";
+import {RoundedBox, Text} from "@react-three/drei";
 import {EffectComposer, Outline, Select, Selection} from "@react-three/postprocessing";
 
 interface BoxProps {
@@ -32,8 +32,12 @@ export function Block(props: BoxProps) {
                     }}
                     onPointerOut={(event) => hover(false)}
                 >
-                            <meshPhongMaterial color={hovered ? 'hotpink' : 'orange'} specular={'#000000'} shininess={10} />
+                    <meshPhongMaterial color={hovered ? '' : '#70C3FA'} specular={'#000000'} shininess={10} />
                 </RoundedBox>
+                <Text position={[0, 1, 0]} fontSize={0.4} lineHeight={1} maxWidth={4}>
+                    Nour Elfangary
+                    <meshBasicMaterial color={'#FFFFFF'} />
+                </Text>
             </Select>
         </Selection>
     )

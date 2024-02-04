@@ -48,7 +48,7 @@ export default function Scene() {
                 <SphereSystem position={[0, 5, -10]}/>
                 {/* Main scene */}
                 <group position={[-0, -2, 0]}>
-                    <Block position={[0, 1, 0]} args={[3, 1, 1]} />
+                    <Block position={[0, 1, -0.75]} args={[4, 1, 1]} />
                     <Ground/>
                 </group>
                 {/* Camera movements */}
