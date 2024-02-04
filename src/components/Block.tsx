@@ -1,7 +1,7 @@
 import {useRef, useState} from "react";
 import {Mesh} from "three";
 import {RoundedBox} from "@react-three/drei";
-import {Bloom, EffectComposer, Outline, Select, Selection} from "@react-three/postprocessing";
+import {EffectComposer, Outline, Select, Selection} from "@react-three/postprocessing";
 
 interface BoxProps {
     position: [number, number, number]
@@ -19,7 +19,6 @@ export function Block(props: BoxProps) {
         <Selection>
             <EffectComposer autoClear={false} disableNormalPass>
                 <Outline blur edgeStrength={2.5} />
-                <Bloom luminanceThreshold={0} mipmapBlur luminanceSmoothing={0.0} intensity={6} />
             </EffectComposer>
             <Select enabled={hovered}>
                 <RoundedBox
