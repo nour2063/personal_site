@@ -6,9 +6,9 @@ interface SphereSystemProps {
 
 function getPosition(): [number, number, number] {
     let x, y, z;
-    x = Math.floor(Math.random()*10) + 1
-    y = Math.floor(Math.random()*5) + 1
-    z = Math.floor(Math.random()*10) + 1
+    x = Math.floor(Math.random()*25) + 1
+    y = Math.floor(Math.random()*4) + 1
+    z = Math.floor(Math.random()*25) + 1
     x *= Math.round(Math.random()) ? 1 : -1
     y *= Math.round(Math.random()) ? 1 : -1
     z *= Math.round(Math.random()) ? 1 : -1
@@ -16,7 +16,7 @@ function getPosition(): [number, number, number] {
 }
 
 function getSize() {
-    return (Math.random() * 0.2) + 0.1
+    return (Math.random() * 0.2) + 0.2
 }
 
 function getColor(){

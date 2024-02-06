@@ -1,9 +1,9 @@
 import styles from "../styles/Scene.module.css"
-import { Block } from './Block'
 import {Canvas, useFrame} from '@react-three/fiber'
 import {MeshReflectorMaterial, BakeShadows} from '@react-three/drei'
 import { easing } from 'maath';
 import {SphereSystem} from "./SphereSystem";
+import {Bloom, EffectComposer, Outline} from "@react-three/postprocessing";
 
 function CameraRig() {
     useFrame((state, delta) => {
@@ -15,8 +15,8 @@ function CameraRig() {
 
 function Ground() {
     return (
-        <mesh receiveShadow rotation={[-Math.PI / 2, 0, 0]}>
-            <planeGeometry args={[100, 100]}/>
+        <mesh receiveShadow rotation={[-Math.PI / 2, 0, 0]} position={[-0, -2, 0]} >
+            <planeGeometry args={[100, 100]} />
             <MeshReflectorMaterial
                 blur={[500, 100]}
                 mixBlur={100}
@@ -38,24 +38,25 @@ export default function Scene() {
             <Canvas
                 shadows
                 dpr={[1, 1.5]}
-                camera={{position: [0, 0, 5.5], fov: 60, far: 30}}
+                camera={{position: [0, 0, 5.5], fov: 60}}
                 eventPrefix="client"
             >
+                <EffectComposer autoClear={false} disableNormalPass>
+                    <Outline blur edgeStrength={2.5} />
+                    <Bloom luminanceThreshold={0} mipmapBlur luminanceSmoothing={0.0} intensity={6} />
+                </EffectComposer>
+
                 {/* Lights */}
                 <color attach="background" args={['#0e2c44']}/>
                 <hemisphereLight intensity={1} groundColor={'white'}/>
-                <pointLight  />
-                <SphereSystem position={[0, 5, -10]}/>
-                {/* Main scene */}
-                <group position={[-0, -2, 0]}>
-                    <Block position={[0, 1, -0.75]} args={[4, 1, 1]} />
-                    <Ground/>
-                </group>
+
+                <SphereSystem position={[0, 4, -12]}/>
+                <Ground />
+
                 {/* Camera movements */}
                 <CameraRig/>
                 {/* Small helper that freezes the shadows for better performance */}
                 <BakeShadows/>
-                {/*<OrbitControls minPolarAngle={1} maxPolarAngle={Math.PI/2} maxDistance={15} />*/}
             </Canvas>
         </div>
     );
