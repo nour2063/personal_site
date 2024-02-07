@@ -1,16 +1,16 @@
 import styles from "../styles/Scene.module.css"
-import {Canvas, useFrame} from '@react-three/fiber'
+import {Canvas} from '@react-three/fiber'
 import {MeshReflectorMaterial, BakeShadows, DeviceOrientationControls} from '@react-three/drei'
-import { easing } from 'maath';
+
 import {SphereSystem} from "./SphereSystem";
 import {Bloom, EffectComposer, Outline} from "@react-three/postprocessing";
-function CameraRig() {
-    useFrame((state, delta) => {
-        easing.damp3(state.camera.position, [-1 + (state.pointer.x * state.viewport.width) / 3, (1 + state.pointer.y) / 2, 5.5], 0.5, delta);
-        state.camera.lookAt(0, 0, 0);
-    });
-    return null;
-}
+// function CameraRig() {
+//     useFrame((state, delta) => {
+//         easing.damp3(state.camera.position, [-1 + (state.pointer.x * state.viewport.width) / 3, (1 + state.pointer.y) / 2, 5.5], 0.5, delta);
+//         state.camera.lookAt(0, 0, 0);
+//     });
+//     return null;
+// }
 
 function Ground() {
     return (
@@ -53,7 +53,7 @@ export default function Scene() {
                 <Ground />
 
                 {/* Camera movements */}
-                <CameraRig/>
+                {/*<CameraRig/>*/}
                 <DeviceOrientationControls  />
                 {/* Small helper that freezes the shadows for better performance */}
                 <BakeShadows/>
