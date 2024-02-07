@@ -38,7 +38,7 @@ function cameraControls() {
             <DeviceOrientationControls  />
         )
     } else {
-        return <CameraRig/>
+        return <CameraRig />
     }
 }
 

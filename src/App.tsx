@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import './styles/App.css';
 import Scene from "./components/Scene";
-import {Accelerometer} from "./components/Accelerometer";
+import {IOSPermission} from "./components/iOSPermission";
 
 function App() {
 
@@ -14,7 +14,7 @@ function App() {
                 'iPad',
                 'iPhone',
                 'iPod'
-            ].includes(navigator.platform)
+            ].includes(navigator.userAgent)
             // iPad on iOS 13 detection
             || (navigator.userAgent.includes("Mac") && "ontouchend" in document);
 
@@ -23,7 +23,7 @@ function App() {
           {
               permissionGranted || !iOS ?
                   (<Scene />) :
-                  (<Accelerometer permissionGranted={permissionGranted} setPermissionGranted={setPermissionGranted} /> )
+                  (<IOSPermission permissionGranted={permissionGranted} setPermissionGranted={setPermissionGranted} /> )
           }
       </>
   );

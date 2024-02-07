@@ -13,7 +13,7 @@ const requestPermission =
     (DeviceMotionEvent as unknown as DeviceMotionEventiOS).requestPermission
 const iOS = typeof requestPermission === 'function'
 
-export function Accelerometer(props: accelerometerProps) {
+export function IOSPermission(props: accelerometerProps) {
 
     useEffect(() => {
         async function getPermission() {
