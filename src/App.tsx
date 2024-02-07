@@ -1,12 +1,21 @@
-import React from 'react';
+import React, {useState} from 'react';
 import './styles/App.css';
 import Scene from "./components/Scene";
+import {Accelerometer} from "./components/Accelerometer";
 
 function App() {
+
+    const [permissionGranted, setPermissionGranted] = useState(false)
+
   return (
-      <div className="App">
-          <Scene/>
-      </div>
+      <>
+          {
+              permissionGranted ?
+                  ( <Scene /> ) :
+                  (<Accelerometer permissionGranted={permissionGranted} setPermissionGranted={setPermissionGranted} /> )
+
+          }
+      </>
   );
 }
 
