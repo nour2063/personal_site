@@ -1,17 +1,17 @@
-import {useEffect} from "react"
+import {useEffect} from "react";
 
 interface  accelerometerProps {
-    permissionGranted: boolean
-    setPermissionGranted: (permission: boolean) => void
+    permissionGranted: boolean;
+    setPermissionGranted: (permission: boolean) => void;
 }
 
 interface DeviceMotionEventiOS extends DeviceMotionEvent {
-    requestPermission?: () => Promise<'granted' | 'denied'>
+    requestPermission?: () => Promise<'granted' | 'denied'>;
 }
 
 const requestPermission =
-    (DeviceMotionEvent as unknown as DeviceMotionEventiOS).requestPermission
-const iOS = typeof requestPermission === 'function'
+    (DeviceMotionEvent as unknown as DeviceMotionEventiOS).requestPermission;
+const iOS = typeof requestPermission === 'function';
 
 export function IOSPermission(props: accelerometerProps) {
 
@@ -20,7 +20,7 @@ export function IOSPermission(props: accelerometerProps) {
             if (iOS) {
                 const response = await requestPermission()
                 if (response === 'granted') {
-                    props.setPermissionGranted(true)
+                    props.setPermissionGranted(true);
                 }
             }
         }
@@ -31,10 +31,10 @@ export function IOSPermission(props: accelerometerProps) {
         if (requestPermission) { // Check if requestPermission is defined
             requestPermission().then((response: string) => {
                 if (response === 'granted') {
-                    props.setPermissionGranted(true)
-                    window.location.reload()
+                    props.setPermissionGranted(true);
+                    window.location.reload();
                 }
-            })
+            });
         }
     }
 
@@ -54,6 +54,5 @@ export function IOSPermission(props: accelerometerProps) {
                 </div>
             )}
         </>
-    )
-
+    );
 }

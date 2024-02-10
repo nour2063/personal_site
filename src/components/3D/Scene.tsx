@@ -1,9 +1,9 @@
-import styles from "../styles/Scene.module.css"
-import {Canvas, useFrame} from '@react-three/fiber'
-import {MeshReflectorMaterial, BakeShadows, DeviceOrientationControls} from '@react-three/drei'
+import '../../styles/App.css';
+import { Canvas, useFrame } from '@react-three/fiber';
+import { MeshReflectorMaterial, BakeShadows, DeviceOrientationControls } from '@react-three/drei';
 import { easing } from 'maath';
-import {SphereSystem} from "./SphereSystem";
-import {Bloom, EffectComposer, Outline} from "@react-three/postprocessing";
+import { SphereSystem } from './SphereSystem';
+import { Bloom, EffectComposer, Outline } from "@react-three/postprocessing";
 import { isMobile } from 'react-device-detect';
 
 function CameraRig() {
@@ -42,10 +42,10 @@ function cameraControls() {
     }
 }
 
-export default function Scene() {
+export function Scene() {
 
     return (
-        <div className={styles.Scene}>
+        <div className={'scene'}>
             <Canvas
                 shadows
                 dpr={[1, 1.5]}

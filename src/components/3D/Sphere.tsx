@@ -1,5 +1,5 @@
-import { Color } from "@react-three/fiber"
-import {Line} from "@react-three/drei";
+import { Color } from "@react-three/fiber";
+import { Line } from "@react-three/drei";
 
 interface Props {
     position: [number, number, number]
