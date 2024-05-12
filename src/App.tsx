@@ -1,6 +1,5 @@
 import React, {useEffect} from 'react';
 import './styles/App.css';
-import * as domain from "domain";
 
 export function App() {
 
