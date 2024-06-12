@@ -3,7 +3,7 @@
     --radius: 14;
     --border: 3;
     --backup-border: var(--backdrop);
-    --size: 200;
+    --size: 700;
 }
 
 article:first-of-type {
@@ -36,14 +36,28 @@ body {
 }
 
 article {
-    width: 100%;
+    min-width: 7.3em;
     max-width: 50em;
     border-radius: calc(var(--radius) * 1px);
     box-shadow: 0 1rem 2rem -1rem black;
     padding: 2rem;
     gap: 1rem;
     backdrop-filter: blur(calc(var(--cardblur, 5) * 1px));
+    min-height: 7.3em;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    svg {
+        width: 50%;
+        height: 100%;
+    }
+    p {
+        text-align: left;
+    }
 }
+
 main {
     width: 100%;
     display: flex;
@@ -52,9 +66,10 @@ main {
     justify-content: center;
     position: relative;
     flex-direction: row;
+    align-items: center;
 }
 
-/* Glow specific styles */
+/* Glow */
 [data-glow] {
     --border-size: calc(var(--border, 2) * 1px);
     --spotlight-size: calc(var(--size, 150) * 1px);
@@ -93,7 +108,7 @@ main {
     mask-composite: intersect;
 }
 
-/* This is the emphasis light */
+/* emphasis light */
 [data-glow]::before {
     background-image: radial-gradient(
             calc(var(--spotlight-size) * 0.75) calc(var(--spotlight-size) * 0.75) at
@@ -103,7 +118,7 @@ main {
     );
     filter: brightness(2);
 }
-/* This is the spotlight */
+/* spotlight */
 [data-glow]::after {
     background-image: radial-gradient(
             calc(var(--spotlight-size) * 0.5) calc(var(--spotlight-size) * 0.5) at
@@ -151,11 +166,17 @@ div {
 }
 
 .main {
-    max-width: 30em;
+    max-width: 35em;
+    article:last-of-type {
+        display: flex;
+        height: 31.75em;
+        justify-content: space-around;
+    }
 }
 
 .side {
     max-width: 10em;
+    display: flex;
 }
 
 h1 {
@@ -171,8 +192,15 @@ h3 {
 p {
     line-height: 2em;
     font-size: 1.2em;
+    width: 90%;
 }
 
 hr {
     border: 1px solid rgba(255,255,255,0.2);
+    width: 90%;
+}
+
+a {
+    color: white;
+    text-decoration: none;
 }
