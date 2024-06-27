@@ -3,7 +3,7 @@
     --radius: 14;
     --border: 3;
     --backup-border: var(--backdrop);
-    --size: 700;
+    --size: 1000;
 }
 
 article:first-of-type {
@@ -20,53 +20,19 @@ article:last-of-type {
 *,
 *:after,
 *:before {
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
 }
+
 body {
     display: flex;
-    justify-content: center;
-    place-items: center;
     min-height: 100vh;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
     overflow: hidden;
     background: hsl(0 0% 4%);
-}
-
-.wrapper {
-    position: relative;
-}
-
-article {
-    min-width: 7.3em;
-    max-width: 50em;
-    border-radius: calc(var(--radius) * 1px);
-    box-shadow: 0 1rem 2rem -1rem black;
-    padding: 2rem;
-    gap: 1rem;
-    backdrop-filter: blur(calc(var(--cardblur, 5) * 1px));
-    min-height: 7.3em;
-    text-align: center;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    svg {
-        width: 50%;
-        height: 100%;
-    }
-    p {
-        text-align: left;
-    }
-}
-
-main {
-    width: 100%;
-    display: flex;
-    gap: 2rem;
-    flex-wrap: wrap;
-    justify-content: center;
-    position: relative;
-    flex-direction: row;
-    align-items: center;
 }
 
 /* Glow */
@@ -159,10 +125,45 @@ main {
     border-width: calc(var(--border-size) * 1);
 }
 
-div {
+article {
+    min-width: 7.3em;
+    max-width: 50em;
+    border-radius: calc(var(--radius) * 1px);
+    box-shadow: 0 1rem 2rem -1rem black;
+    padding: 2rem;
+    gap: 1rem;
+    backdrop-filter: blur(calc(var(--cardblur, 5) * 1px));
+    min-height: 7.3em;
+    text-align: center;
     display: flex;
+    align-items: center;
+    justify-content: center;
     flex-direction: column;
+    svg {
+        width: 50%;
+        height: 100%;
+    }
+    p {
+        text-align: left;
+    }
+}
+
+.footer {
+    article {
+        gap: 0.75rem;
+        svg {
+            width: 25%;
+        }
+    }
+}
+
+main, .container, .main, .side, .footer {
+    display: flex;
     gap: 2em;
+}
+
+.main, .side, .container {
+    flex-direction: column;
 }
 
 .main {
@@ -174,11 +175,6 @@ div {
     }
 }
 
-.side {
-    max-width: 10em;
-    display: flex;
-}
-
 h1 {
     text-align: center;
     font-size: 2em;
@@ -187,12 +183,15 @@ h1 {
 
 h3 {
     text-align: center;
+    padding: 0.9rem;
+    width: 26.1em;
 }
 
 p {
     line-height: 2em;
     font-size: 1.2em;
     width: 90%;
+    margin: 0.2em 0;
 }
 
 hr {
@@ -204,3 +203,4 @@ a {
     color: white;
     text-decoration: none;
 }
+
