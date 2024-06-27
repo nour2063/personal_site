@@ -35,7 +35,7 @@ export function App() {
           <main>
               <div className={"side"}>
                   <Tilt>
-                      <a href={CV} target="_blank">
+                      <a href={CV} target="_blank" rel="noopener noreferrer">
                           <article data-glow>
                               <IoDocumentTextOutline/>
                               CV
@@ -43,7 +43,7 @@ export function App() {
                       </a>
                   </Tilt>
                   <Tilt>
-                      <a href="https://github.com/nour2063" target="_blank">
+                      <a href="https://github.com/nour2063" target="_blank" rel="noopener noreferrer">
                           <article data-glow>
                               <FaGithub/>
                               GitHub
@@ -51,7 +51,7 @@ export function App() {
                       </a>
                   </Tilt>
                   <Tilt>
-                      <a href="https://www.linkedin.com/in/nour-elfangary/" target="_blank">
+                      <a href="https://www.linkedin.com/in/nour-elfangary/" target="_blank" rel="noopener noreferrer">
                           <article data-glow>
                               <FaLinkedin/>
                               LinkedIn
@@ -59,7 +59,7 @@ export function App() {
                       </a>
                   </Tilt>
                   <Tilt>
-                      <a href="https://www.instagram.com/noureldineee_/" target="_blank">
+                      <a href="https://www.instagram.com/noureldineee_/" target="_blank" rel="noopener noreferrer">
                           <article data-glow>
                               <FaInstagram/>
                               Instagram
@@ -87,7 +87,7 @@ export function App() {
           </main>
           <div className={"footer"}>
               <Tilt >
-                  <a href="/" target="_blank">
+                  <a href="/" target="_blank" rel="noopener noreferrer">
                       <article data-glow>
                           <FaUserGroup />
                           my friends
