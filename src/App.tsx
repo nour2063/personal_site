@@ -1,4 +1,4 @@
-import React, {createElement, useEffect, useRef} from 'react';
+import React, {useEffect} from 'react';
 import './styles/App.css';
 import {FaGithub, FaInstagram, FaLinkedin} from "react-icons/fa";
 import {IoDocumentTextOutline} from "react-icons/io5";
