@@ -67,7 +67,7 @@ export function App() {
                       </a>
                   </Tilt>
               </div>
-              <Tilt className={"main"} perspective={2500}>
+              <Tilt className={"main"} perspective={2500} tiltMaxAngleX={10} tiltMaxAngleY={10} gyroscope={true}>
                   <article data-glow>
                       <h1>Nour Elfangary</h1>
                   </article>
