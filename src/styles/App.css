@@ -189,7 +189,7 @@ h3 {
 
 p {
     line-height: 2em;
-    font-size: 1.2em;
+    font-size: 1.05em;
     width: 90%;
     margin: 0.2em 0;
 }
@@ -202,5 +202,20 @@ hr {
 a {
     color: white;
     text-decoration: none;
+}
+
+img {
+    width: 7.5em;
+    border-radius: 1em;
+}
+
+img#left {
+    float: left;
+    margin-right: 1em;
+}
+
+img#right {
+    float: right;
+    margin-left: 1em;
 }
 

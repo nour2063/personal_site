@@ -3,8 +3,10 @@ import './styles/App.css';
 import {FaGithub, FaInstagram, FaLinkedin} from "react-icons/fa";
 import {IoDocumentTextOutline} from "react-icons/io5";
 import CV from "./CV.pdf";
-import Tilt from 'react-parallax-tilt';
+import Tilt from "react-parallax-tilt";
 import {FaUserGroup} from "react-icons/fa6";
+import grass from "./grass.jpg";
+import desert from "./desert.jpg";
 
 export function App() {
 
@@ -74,13 +76,17 @@ export function App() {
                   <article data-glow>
                       <h3>About Me</h3>
                       <hr/>
-                      <p> Born in Cairo and raised internationally, I'm a young professional software developer
+                      <p>
+                          <img src={grass} id={"left"}/>
+                          Born in Cairo and raised internationally, I'm a young professional software developer
                           currently
                           studying Computer Science at the University of Glasgow. </p>
                       <p>
-                          As I approach my final year of studies, I look forward
-                          to entering the work force and watch myself continue to learn and grow.
+                          <img src={desert} id={"right"}/>
+                          As I approach my final year of studies, <br/> I look forward
+                          to entering the workforce and watch myself continue to learn more.
                       </p>
+
                       <hr/>
                   </article>
               </Tilt>
