@@ -77,12 +77,12 @@ export function App() {
                       <h3>About Me</h3>
                       <hr/>
                       <p>
-                          <img src={grass} id={"left"}/>
+                          <img src={grass} id={"left"} alt={""}/>
                           Born in Cairo and raised internationally, I'm a young professional software developer
                           currently
                           studying Computer Science at the University of Glasgow. </p>
                       <p>
-                          <img src={desert} id={"right"}/>
+                          <img src={desert} id={"right"} alt={""}/>
                           As I approach my final year of studies, <br/> I look forward
                           to entering the workforce and watch myself continue to learn more.
                       </p>
