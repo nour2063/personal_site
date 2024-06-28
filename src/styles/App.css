@@ -32,7 +32,7 @@ body {
     align-items: center;
     margin: auto;
     overflow: hidden;
-    background: hsl(0 0% 4%);
+    background: linear-gradient(180deg, #6FFFEE -500%, #000 100%);
 }
 
 /* Glow */
