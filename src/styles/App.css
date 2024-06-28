@@ -1,6 +1,6 @@
 :root {
     --backdrop: hsl(0 0% 60% / 0.12);
-    --radius: 14;
+    --radius: 10;
     --border: 3;
     --backup-border: var(--backdrop);
     --size: 1500;
