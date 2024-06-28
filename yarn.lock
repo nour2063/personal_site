@@ -1348,11 +1348,6 @@
   resolved "https://registry.npmjs.org/@istanbuljs/schema/-/schema-0.1.3.tgz"
   integrity sha512-ZXRY4jNvVgSVQ8DL3LTcakaAtXwTVUxE81hslsyD2AtoXW/wVob10HkOJ1X/pAlcI7D+2YoZKg5do8G/w6RYgA==
 
-"@jdion/tilt-react@^1.0.0":
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/@jdion/tilt-react/-/tilt-react-1.0.0.tgz#00a12be65a725239ac532f845248b78d356d0dd7"
-  integrity sha512-Qvr0iwxoYc4BAxZzCkrCEF7Vk0DauFIY7eehKU6dCwdil6gj2tlYOOXkMDHMIrdcO6yYDL/yqLI4bNZr4F2swA==
-
 "@jest/console@^27.5.1":
   version "27.5.1"
   resolved "https://registry.npmjs.org/@jest/console/-/console-27.5.1.tgz"
@@ -8174,6 +8169,11 @@ react-merge-refs@^1.1.0:
   version "1.1.0"
   resolved "https://registry.npmjs.org/react-merge-refs/-/react-merge-refs-1.1.0.tgz"
   integrity sha512-alTKsjEL0dKH/ru1Iyn7vliS2QRcBp9zZPGoWxUOvRGWPUYgjo+V01is7p04It6KhgrzhJGnIj9GgX8W4bZoCQ==
+
+react-parallax-tilt@^1.7.229:
+  version "1.7.229"
+  resolved "https://registry.yarnpkg.com/react-parallax-tilt/-/react-parallax-tilt-1.7.229.tgz#8696afe47b373fa5592f2478f321a76e9a4f18f1"
+  integrity sha512-+dS+Wp3vbtGRjKNOjRj/57Bk3tdZMOA5dAiA/k2ZRLDPzvidinCozYdVKgGcyYSb2/UWaYUeF2mI0XQhD7RymQ==
 
 react-reconciler@^0.27.0:
   version "0.27.0"

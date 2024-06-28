@@ -3,7 +3,7 @@ import './styles/App.css';
 import {FaGithub, FaInstagram, FaLinkedin} from "react-icons/fa";
 import {IoDocumentTextOutline} from "react-icons/io5";
 import CV from "./CV.pdf";
-import { Tilt } from '@jdion/tilt-react';
+import Tilt from 'react-parallax-tilt';
 import {FaUserGroup} from "react-icons/fa6";
 
 export function App() {
@@ -34,7 +34,7 @@ export function App() {
       <div className={"container"}>
           <main>
               <div className={"side"}>
-                  <Tilt>
+                  <Tilt scale={1.1}>
                       <a href={CV} target="_blank" rel="noopener noreferrer">
                           <article data-glow>
                               <IoDocumentTextOutline/>
@@ -42,7 +42,7 @@ export function App() {
                           </article>
                       </a>
                   </Tilt>
-                  <Tilt>
+                  <Tilt scale={1.1}>
                       <a href="https://github.com/nour2063" target="_blank" rel="noopener noreferrer">
                           <article data-glow>
                               <FaGithub/>
@@ -50,7 +50,7 @@ export function App() {
                           </article>
                       </a>
                   </Tilt>
-                  <Tilt>
+                  <Tilt scale={1.1}>
                       <a href="https://www.linkedin.com/in/nour-elfangary/" target="_blank" rel="noopener noreferrer">
                           <article data-glow>
                               <FaLinkedin/>
@@ -58,7 +58,7 @@ export function App() {
                           </article>
                       </a>
                   </Tilt>
-                  <Tilt>
+                  <Tilt scale={1.1}>
                       <a href="https://www.instagram.com/noureldineee_/" target="_blank" rel="noopener noreferrer">
                           <article data-glow>
                               <FaInstagram/>
@@ -67,7 +67,7 @@ export function App() {
                       </a>
                   </Tilt>
               </div>
-              <Tilt className={"main"}>
+              <Tilt className={"main"} perspective={2500}>
                   <article data-glow>
                       <h1>Nour Elfangary</h1>
                   </article>
@@ -86,7 +86,7 @@ export function App() {
               </Tilt>
           </main>
           <div className={"footer"}>
-              <Tilt >
+              <Tilt scale={1.1}>
                   <a href="/" target="_blank" rel="noopener noreferrer">
                       <article data-glow>
                           <FaUserGroup />

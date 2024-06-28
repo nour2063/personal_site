@@ -3,7 +3,6 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@jdion/tilt-react": "^1.0.0",
     "@react-three/drei": "^9.96.5",
     "@react-three/fiber": "^8.15.15",
     "@react-three/postprocessing": "^2.15.12",
@@ -20,6 +19,7 @@
     "react-dom": "^18.2.0",
     "react-helmet": "^6.1.0",
     "react-icons": "^5.0.1",
+    "react-parallax-tilt": "^1.7.229",
     "react-scripts": "5.0.1",
     "three": "^0.160.1",
     "typescript": "^4.4.2",
