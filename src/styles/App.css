@@ -3,7 +3,7 @@
     --radius: 10;
     --border: 3;
     --backup-border: var(--backdrop);
-    --size: 1500;
+    --size: 1000;
 }
 
 article:first-of-type {
@@ -39,7 +39,7 @@ body {
 [data-glow] {
     --border-size: calc(var(--border, 2) * 1px);
     --spotlight-size: calc(var(--size, 150) * 1px);
-    --hue: calc(var(--base) + (var(--xp, 0) * var(--spread, 0)));
+    --hue: calc(var(--base) + ((var(--xp, 0)*2) * var(--spread, 0)));
     background-image: radial-gradient(
             var(--spotlight-size) var(--spotlight-size) at
             calc(var(--x, 0) * 1px)
@@ -78,8 +78,8 @@ body {
 [data-glow]::before {
     background-image: radial-gradient(
             calc(var(--spotlight-size) * 0.75) calc(var(--spotlight-size) * 0.75) at
-            calc(var(--x, 0) * 1px)
-            calc(var(--y, 0) * 1px),
+            calc(var(--x, 0) * 1px - 50%)
+            calc(var(--y, 0) * 1px - 50%),
             hsl(var(--hue, 210) calc(var(--saturation, 100) * 1%) calc(var(--lightness, 50) * 1%) / var(--border-spot-opacity, 1)), transparent 100%
     );
     filter: brightness(2);
@@ -88,8 +88,8 @@ body {
 [data-glow]::after {
     background-image: radial-gradient(
             calc(var(--spotlight-size) * 0.5) calc(var(--spotlight-size) * 0.5) at
-            calc(var(--x, 0) * 1px)
-            calc(var(--y, 0) * 1px),
+            calc(var(--x, 0) * 1px - 50%)
+            calc(var(--y, 0) * 1px - 50%),
             hsl(0 100% 100% / var(--border-light-opacity, 1)), transparent 100%
     );
 }

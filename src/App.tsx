@@ -23,10 +23,6 @@ export function App() {
                 (props.x / window.innerWidth).toFixed(2)
             )
             document.documentElement.style.setProperty('--y', props.y.toFixed(2))
-            document.documentElement.style.setProperty(
-                '--yp',
-                (props.y / window.innerHeight).toFixed(2)
-            )
         };
         document.body.addEventListener('pointermove', syncPointer);
     });
@@ -35,7 +31,7 @@ export function App() {
       <div className={"container"}>
           <main>
               <div className={"side"}>
-                  <Tilt scale={1.1}>
+                  <Tilt scale={1.1} className={"card"}>
                       <a href={CV} target="_blank" rel="noopener noreferrer">
                           <article data-glow>
                               <IoDocumentTextOutline/>
@@ -43,7 +39,7 @@ export function App() {
                           </article>
                       </a>
                   </Tilt>
-                  <Tilt scale={1.1}>
+                  <Tilt scale={1.1} className={"card"}>
                       <a href="https://github.com/nour2063" target="_blank" rel="noopener noreferrer">
                           <article data-glow>
                               <FaGithub/>
@@ -51,7 +47,7 @@ export function App() {
                           </article>
                       </a>
                   </Tilt>
-                  <Tilt scale={1.1}>
+                  <Tilt scale={1.1} className={"card"}>
                       <a href="https://www.linkedin.com/in/nour-elfangary/" target="_blank" rel="noopener noreferrer">
                           <article data-glow>
                               <FaLinkedin/>
@@ -59,7 +55,7 @@ export function App() {
                           </article>
                       </a>
                   </Tilt>
-                  <Tilt scale={1.1}>
+                  <Tilt scale={1.1} className={"card"}>
                       <a href="https://www.instagram.com/noureldineee_/" target="_blank" rel="noopener noreferrer">
                           <article data-glow>
                               <FaInstagram/>
@@ -90,7 +86,7 @@ export function App() {
               </Tilt>
           </main>
           <div className={"footer"}>
-              <Tilt scale={1.1}>
+              <Tilt scale={1.1} className={"card"}>
                   <a href="/" target="_blank" rel="noopener noreferrer">
                       <article data-glow>
                           <FaUserGroup />
@@ -98,9 +94,9 @@ export function App() {
                       </article>
                   </a>
               </Tilt>
-              <Tilt>
+              <Tilt className={"card"}>
                   <article data-glow>
-                      <h3>my stuff</h3>
+                      <h3>my stuff (coming soon, work in progress)</h3>
                   </article>
               </Tilt>
           </div>
