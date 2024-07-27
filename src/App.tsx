@@ -1,11 +1,9 @@
 import React, {useEffect} from 'react';
 import './styles/App.css';
-import {FaGithub, FaInstagram, FaLinkedin} from "react-icons/fa";
-import {IoDocumentTextOutline} from "react-icons/io5";
-import CV from "./CV.pdf";
 import Tilt from "react-parallax-tilt";
-import {FaUserGroup} from "react-icons/fa6";
 import grass from "./grass.jpg";
+import {Sidebar} from "./components/sidebar";
+import {CiMenuBurger} from "react-icons/ci";
 
 export function App() {
 
@@ -30,76 +28,38 @@ export function App() {
   return (
       <div className={"container"}>
           <main>
-              <div className={"side"}>
-                  <Tilt scale={1.1} className={"card"}>
-                      <a href={CV} target="_blank" rel="noopener noreferrer">
-                          <article data-glow>
-                              <IoDocumentTextOutline/>
-                              CV
-                          </article>
-                      </a>
+              <Sidebar/>
+              <div className={"main"}>
+                  <Tilt className={"container"} perspective={2500} tiltMaxAngleX={10} tiltMaxAngleY={10} gyroscope={true}>
+                      <div className={"top"}>
+                          <div className={"card"} id={"menu"}>
+                              <CiMenuBurger />
+                          </div>
+                          <div className={"card"} id={"title"}>
+                              <h1>Nour Elfangary</h1>
+                          </div>
+                      </div>
+                      <div className={"card"} id={"bio"}>
+                          <h3>About Me</h3>
+                          <hr/>
+                          <p>
+                              <img src={grass} alt={""}/>
+                              Born in Cairo and raised internationally, I'm a young professional software developer
+                              currently
+                              studying Computer Science at the University of Glasgow. </p>
+                          <p>
+                              As I approach my final year of studies, I look forward
+                              to entering the workforce and watch myself continue to learn more.
+                          </p>
+
+                          <hr/>
+                      </div>
                   </Tilt>
-                  <Tilt scale={1.1} className={"card"}>
-                      <a href="https://github.com/nour2063" target="_blank" rel="noopener noreferrer">
-                          <article data-glow>
-                              <FaGithub/>
-                              GitHub
-                          </article>
-                      </a>
-                  </Tilt>
-                  <Tilt scale={1.1} className={"card"}>
-                      <a href="https://www.linkedin.com/in/nour-elfangary/" target="_blank" rel="noopener noreferrer">
-                          <article data-glow>
-                              <FaLinkedin/>
-                              LinkedIn
-                          </article>
-                      </a>
-                  </Tilt>
-                  <Tilt scale={1.1} className={"card"}>
-                      <a href="https://www.instagram.com/noureldineee_/" target="_blank" rel="noopener noreferrer">
-                          <article data-glow>
-                              <FaInstagram/>
-                              Instagram
-                          </article>
-                      </a>
+                  <Tilt className={"card"}>
+                      <h3>my stuff (coming soon, work in progress)</h3>
                   </Tilt>
               </div>
-              <Tilt className={"main"} perspective={2500} tiltMaxAngleX={10} tiltMaxAngleY={10} gyroscope={true}>
-                  <article data-glow>
-                      <h1>Nour Elfangary</h1>
-                  </article>
-                  <article data-glow>
-                      <h3>About Me</h3>
-                      <hr/>
-                      <p>
-                          <img src={grass} alt={""}/>
-                          Born in Cairo and raised internationally, I'm a young professional software developer
-                          currently
-                          studying Computer Science at the University of Glasgow. </p>
-                      <p>
-                          As I approach my final year of studies, I look forward
-                          to entering the workforce and watch myself continue to learn more.
-                      </p>
-
-                      <hr/>
-                  </article>
-              </Tilt>
           </main>
-          <div className={"footer"}>
-              <Tilt scale={1.1} className={"card"}>
-                  <a href="/" target="_blank" rel="noopener noreferrer">
-                      <article data-glow>
-                          <FaUserGroup />
-                          my friends
-                      </article>
-                  </a>
-              </Tilt>
-              <Tilt className={"card"}>
-                  <article data-glow>
-                      <h3>my stuff (coming soon, work in progress)</h3>
-                  </article>
-              </Tilt>
-          </div>
       </div>
   );
 }
