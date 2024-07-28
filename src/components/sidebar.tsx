@@ -4,10 +4,11 @@ import {IoDocumentTextOutline} from "react-icons/io5";
 import {FaGithub, FaInstagram, FaLinkedin} from "react-icons/fa";
 import React from "react";
 import {FaUserGroup} from "react-icons/fa6";
+import {hideMenu} from "../App";
 
 export function Sidebar() {
     return (
-        <div className={"side"}>
+        <div className={"side"} onClick={hideMenu}>
             <a href={CV} target="_blank" rel="noopener noreferrer">
                 <Tilt scale={1.1} className={"card"}>
                     <IoDocumentTextOutline/>

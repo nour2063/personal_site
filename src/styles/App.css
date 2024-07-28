@@ -1,5 +1,28 @@
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap');
 
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+@keyframes fadeOut {
+    0% {
+        display: block;
+        opacity: 1;
+    }
+    100% { opacity: 0; }
+}
+
+@keyframes fadeOutMenu {
+    0% {
+        display: grid;
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
 
 * {
     margin: 0;
@@ -40,6 +63,10 @@ body {
 main, .container, .main, .side, .footer {
     display: flex;
     gap: 2em;
+}
+
+main {
+    justify-content: center;
 }
 
 .main, .side, .container {
@@ -121,20 +148,62 @@ img {
     :root {
         font-size: 0.95em;
     }
+
     .card {
         min-width: 5em;
     }
+
     h1 {
         font-size: 1.4em;
     }
+
     body {
         margin: 2em;
     }
+
     .side {
         display: none;
     }
+
     #menu {
         display: block;
+    }
+
+    #mobile, #hideMenu {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        max-height: 100%;
+        position: absolute;
+        animation: fadeIn 0.3s;
+        z-index: 1;
+        .card {
+            width: 8em;
+        }
+    }
+
+    .background-blur {
+        display: none;
+        position: fixed;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: hsla(0, 0%, 0%, 0.3);
+        backdrop-filter: blur(1em);
+    }
+
+    #show {
+        display: block;
+        animation: fadeIn 0.4s;
+    }
+
+    #hide {
+        animation: fadeOut 0.4s;
+    }
+
+    #hideMenu {
+        display: none;
+        animation: fadeOutMenu 0.4s;
     }
 }
 
