@@ -122,7 +122,7 @@ img {
         font-size: 0.95em;
     }
     .card {
-        min-width: unset;
+        min-width: 5em;
     }
     h1 {
         font-size: 1.4em;
