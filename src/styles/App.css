@@ -1,221 +1,40 @@
-@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap');
-
-@keyframes fadeIn {
-    0% { opacity: 0; }
-    100% { opacity: 1; }
-}
-
-@keyframes fadeOut {
-    0% {
-        display: block;
-        opacity: 1;
-    }
-    100% { opacity: 0; }
-}
-
-@keyframes fadeOutMenu {
-    0% {
-        display: grid;
-        opacity: 1;
-    }
-    100% {
-        opacity: 0;
-    }
-}
-
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: "Quicksand", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: 550;
-    font-style: normal;
-}
-
 body {
-    display: flex;
-    min-height: 100vh;
-    justify-content: center;
-    align-items: center;
-    margin: auto;
-    background: linear-gradient(180deg, #6FFFEE -500%, #000 100%);
+    background-color: black;
 }
 
-.card {
-    min-width: 7.3em;
-    max-width: 50em;
-    border-radius: 0.5em;
-    border: 0.2em hsla(0, 0%, 100%, 0.1) solid;
-    background-color: hsla(0, 0%, 100%, 0.05);
-    box-shadow: 0 1rem 2rem -1rem black;
-    padding: 2rem;
-    min-height: 7.3em;
-    text-align: center;
+.App {
     display: flex;
-    align-items: center;
-    gap: 0.5em;
-    flex-direction: column;
     justify-content: center;
+    align-items: center;
+    height: 100dvh;
+    width: 100dvw;
 }
 
-main, .container, .main, .side, .footer {
-    display: flex;
-    gap: 2em;
+.vignette {
+    position: fixed;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg, rgb(0, 0, 0) -10%, rgba(0, 0, 0, 0.3) 50%, rgb(0, 0, 0) 110%);
 }
 
 main {
+    display: flex;
     justify-content: center;
+    height: 35em;
 }
 
-.main, .side, .container {
-    flex-direction: column;
+.side {
+    background: rgba(205, 255, 240, 0.15);
+    box-shadow: 0 8px 32px 0 rgba(163, 255, 246, 0.37);
+    backdrop-filter: blur( 10px );
+    -webkit-backdrop-filter: blur( 4px );
+    border-radius: 10px;
+    border: 2px solid rgba( 255, 255, 255, 0.18 );
+
+    padding: 2em;
 }
 
-.main {
-    max-width: 35em;
-}
-
-#bio {
-    display: flex;
-    flex-direction: column;
-    text-align: left;
-    align-items: center;
-    gap: 1.5em;
-}
-
-h1 {
-    text-align: center;
-    font-size: 2em;
-    margin: 0.2em 0;
-    font-weight: 600;
-}
-
-h3 {
-    text-align: center;
-    padding: 0.9rem;
-}
-
-p {
-    line-height: 2em;
-    width: 90%;
-    margin: 0.2em 0;
-    font-weight: 450;
-}
-
-hr {
-    border: 1px solid rgba(255,255,255,0.2);
-    width: 90%;
-}
-
-a {
-    color: white;
-    text-decoration: none;
-    svg {
-        width: 38.3%;
-        height: 100%;
-    }
-}
-
-img {
-    width: 7.5em;
-    border-radius: 1em;
-    float: left;
-    margin-right: 1em;
-}
-
-.top {
-    display: flex;
-    flex-direction: row;
-    gap: 2em;
-    svg {
-        width: 70%;
-        height: 100%;
-    }
-}
-
-#title {
-    flex-grow: 1;
-}
-
-#menu {
-    display: none;
-    padding: 1.5em;
-}
-
-@media(max-width: 50em) {
-    :root {
-        font-size: 0.95em;
-    }
-
-    .card {
-        min-width: 5em;
-    }
-
-    h1 {
-        font-size: 1.4em;
-    }
-
-    body {
-        margin: 2em;
-    }
-
-    .side {
-        display: none;
-    }
-
-    #menu {
-        display: block;
-    }
-
-    #mobile, #hideMenu {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        max-height: 100%;
-        position: absolute;
-        animation: fadeIn 0.3s;
-        z-index: 1;
-        .card {
-            width: 8em;
-        }
-    }
-
-    .background-blur {
-        display: none;
-        position: fixed;
-        left: 0;
-        top: 0;
-        width: 100%;
-        height: 100%;
-        background-color: hsla(0, 0%, 0%, 0.3);
-        backdrop-filter: blur(1em);
-    }
-
-    #show {
-        display: block;
-        animation: fadeIn 0.4s;
-    }
-
-    #hide {
-        animation: fadeOut 0.4s;
-    }
-
-    #hideMenu {
-        display: none;
-        animation: fadeOutMenu 0.4s;
-    }
-}
-
-@media(max-width: 24.2em) {
-    p {
-        display: flex;
-        flex-direction: column;
-        gap: 1em;
-        align-items: center;
-    }
-    img {
-        float: none;
-        margin: 0;
-    }
+.content {
+    padding: 4em;
 }
