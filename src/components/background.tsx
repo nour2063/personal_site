@@ -16,8 +16,8 @@ const PipeAnimation = () => {
     const turnCount = 8;
     const turnAmount = (360 / turnCount) * TO_RAD;
     const turnChanceRange = 500;
-    const baseSpeed = 0.2;
-    const rangeSpeed = 0.5;
+    const baseSpeed = 0.5;
+    const rangeSpeed = 1;
     const baseTTL = 500;
     const rangeTTL = 800;
     const baseWidth = 2;
@@ -208,7 +208,7 @@ const PipeAnimation = () => {
             cancelAnimationFrame(animationRef.current!);
             clearTimeout(resizeTimeout.current);
         };
-    }, []);
+    });
 
     return (
         <>

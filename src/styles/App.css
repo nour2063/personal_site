@@ -29,12 +29,49 @@ main {
     box-shadow: 0 8px 32px 0 rgba(163, 255, 246, 0.37);
     backdrop-filter: blur( 10px );
     -webkit-backdrop-filter: blur( 4px );
-    border-radius: 10px;
-    border: 2px solid rgba( 255, 255, 255, 0.18 );
+    border-radius: 0.5em;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
 
     padding: 2em;
+    width: 10em;
 }
 
 .content {
-    padding: 4em;
+    padding: 0 5em;
+    width: 30em;
+}
+
+h1 {
+    font-size: 4em;
+    margin: 0.25em 0;
+    text-align: center;
+}
+
+p {
+    margin: 2em 0;
+    line-height: 1.5;
+}
+
+.image {
+    float: left;
+    margin: 0.25em 2em 0 0;
+    padding: 1em;
+
+    background: rgba(205, 255, 240, 0.15);
+    box-shadow: 0 8px 32px 0 rgba(163, 255, 246, 0.37);
+    backdrop-filter: blur( 10px );
+    -webkit-backdrop-filter: blur( 4px );
+    border-radius: 0.5em;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+
+    height: 8em;
+    width: 8em;
+    display: flex;
+    justify-content: center;
+}
+
+img {
+    height: 7.75em;
+    border-radius: 0.5em;
+    border: 1px solid rgba(255, 255, 255, 0.11);
 }
