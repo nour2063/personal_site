@@ -19,7 +19,7 @@ const PipeAnimation = () => {
     const baseSpeed = 0.5;
     const rangeSpeed = 1;
     const baseTTL = 500;
-    const rangeTTL = 800;
+    const rangeTTL = 600;
     const baseWidth = 2;
     const rangeWidth = 4;
     const baseHue = 180;

@@ -1,34 +1,48 @@
-import React from 'react';
+import React, {useState} from 'react';
 import './styles/App.css'
 import {Sidebar} from "./components/sidebar";
 import Background from "./components/background";
 import photo from "./grass.jpg"
+import Tilt from "react-parallax-tilt";
+import {About} from "./components/about";
+import {Links} from "./components/links";
+import {IoIosArrowBack} from "react-icons/io";
 
 export function App() {
+    const [active, setActive] = useState("about");
+
+    const handleBack = () => {
+        setActive("about");
+    };
+
     return (
         <div className="App">
             <Background/>
-            <main>
-                <Sidebar/>
-                <div className={"content"}>
-                    <h1>Nour Elfangary</h1>
-                    <hr/>
-                    <p>
-                        <div className={"image"}>
+            <div>
+                <h1>Nour Elfangary
+                    {active === "about" && (
+                        <Tilt className={"image"}>
                             <img src={photo} alt=""/>
-                        </div>
-                        Young and full of energy, I’m a mixed reality developer currently obtaining a Master’s degree at
-                        the University of Glasgow. My studies span across a wide range of computing subjects to gain a
-                        holistic perspective of the discipline out of pure keen interest.
-                    </p>
-                    <p>
-                        Born in Egypt, raised between Saudi Arabia, England, Qatar, and the UAE, and now living in
-                        Scotland, I’ve grown accustomed to a transient and multicultural lifestyle. My future is
-                        uncertain, but very exciting, and I look forward to where I end up next.
-                    </p>
-                    <hr/>
-                </div>
-            </main>
+                        </Tilt>
+                    )}
+                </h1>
+                <main>
+                    <Sidebar setActive={setActive}/>
+                    <div className={"content"}>
+                        {active !== "about" && (
+                            <div className={"button"} id={"back"} onClick={handleBack}>
+                                <IoIosArrowBack className={"icon"}/>
+                                back
+                            </div>
+                        )}
+                        <About className={active === "about" ? "show" : "hide"}/>
+                        <Links className={active === "links" ? "show" : "hide"}/>
+                        {/*<Projects className={active === "projects" ? "show" : "hide"}/>*/}
+                        {/*<Photos className={active === "photos" ? "show" : "hide"}/>*/}
+                        {/*<Friends className={active === "friends" ? "show" : "hide"}/>*/}
+                    </div>
+                </main>
+            </div>
         </div>
     );
 }
