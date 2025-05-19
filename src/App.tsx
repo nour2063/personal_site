@@ -18,14 +18,15 @@ export function App() {
     return (
         <div className="App">
             <Background/>
-            <div>
-                <h1>Nour Elfangary
+            <div className="block">
+                <header>
+                    <h1>Nour Elfangary</h1>
                     {active === "about" && (
                         <Tilt className={"image"}>
                             <img src={photo} alt=""/>
                         </Tilt>
                     )}
-                </h1>
+                </header>
                 <main>
                     <Sidebar setActive={setActive}/>
                     <div className={"content"}>
@@ -41,6 +42,7 @@ export function App() {
                         {/*<Photos className={active === "photos" ? "show" : "hide"}/>*/}
                         {/*<Friends className={active === "friends" ? "show" : "hide"}/>*/}
                     </div>
+                    <div className="mobileBuffer" />
                 </main>
             </div>
         </div>
