@@ -67,9 +67,14 @@ header {
 }
 
 h1 {
+    font-family: "Gochi Hand", cursive;
+    font-weight: 400;
+    font-style: normal;
     font-size: 4em;
     margin: 0;
     padding: 0 2rem;
+    height: 2.5em;
+    line-height: 2.5em;
 }
 
 p {
@@ -110,6 +115,9 @@ img {
     display: flex;
     align-items: center;
     gap: 1em;
+
+    font-weight: bold;
+    color: rgba(255, 255, 255, 0.8);
 }
 
 .button:hover {
@@ -178,6 +186,12 @@ hr {
 }
 
 @media (max-width: 55em) {
+    h1 {
+        line-height: unset;
+        height: unset;
+        text-align: center;
+        width: 100%;
+    }
     .image {
         display: none
     }

@@ -9,7 +9,7 @@ export function About({className}: AboutProps) {
         <div className={className}>
             <hr/>
             <p>
-                Young and full of energy, I’m a mixed reality developer currently obtaining a Master’s degree at
+                I’m a software developer currently obtaining a Master’s degree at
                 the University of Glasgow. My studies span across a wide range of computing subjects to gain a
                 holistic perspective of the discipline out of pure keen interest.
             </p>

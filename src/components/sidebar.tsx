@@ -2,7 +2,7 @@ import Tilt from "react-parallax-tilt";
 
 export function Sidebar({ setActive }: { setActive: (key: string) => void }) {
     return (
-        <Tilt className={"side"}>
+        <Tilt className={"side"} perspective={1250} gyroscope={true} glareEnable={true}>
             <div className={"button"} onClick={() => setActive("links")}>my links</div>
             <div className={"button"} onClick={() => setActive("projects")}>projects</div>
             <div className={"button"} onClick={() => setActive("photos")}>photos</div>
