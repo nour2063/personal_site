@@ -237,6 +237,7 @@ hr {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr 1fr;
         width: fit-content;
+        height: auto;
         left: 50%;
         transform: translateX(-50%);
         border-radius: 1rem;
