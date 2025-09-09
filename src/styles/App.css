@@ -1,3 +1,25 @@
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeDown {
+    from {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    to {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+}
+
 body {
     background-color: black;
     font-family: "TASA Explorer", sans-serif;
@@ -152,6 +174,10 @@ img {
     cursor: pointer;
 }
 
+.mobileMenu:hover {
+    scale: 1.2;
+}
+
 .button#more:hover {
     background: revert;
     box-shadow: revert;
@@ -301,17 +327,19 @@ hr {
         display: block;
     }
     .side#hide {
-        display: none;
+        display: grid;
+        animation: fadeDown 0.2s ease-out forwards;
     }
     .side#show {
         display: grid;
+        animation: fadeUp 0.2s ease-out forwards;
     }
 }
 
 @media (max-width: 24em) {
     .side {
         left: 50%;
-        transform: translateX(-50%);
+        translate: -50%;
     }
 }
 
