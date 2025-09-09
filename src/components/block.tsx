@@ -19,9 +19,12 @@ export function Block() {
             <header>
                 <h1>Nour Elfangary</h1>
                 {active === "about" && (
-                    <Tilt className={"image"}>
-                        <img src={photo} alt=""/>
-                    </Tilt>
+                    <div className={"panel"}>
+                        <Links className={"miniLinks"}/>
+                        <Tilt className={"image"}>
+                            <img src={photo} alt=""/>
+                        </Tilt>
+                    </div>
                 )}
             </header>
             <main>
