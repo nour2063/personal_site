@@ -108,7 +108,7 @@ p {
 
 .miniLinks {
     display: grid;
-    grid-template-columns: 2fr 2fr;
+    grid-template-columns: 1fr 1fr;
     width: 15em;
     gap: 0.5em;
     .button {
@@ -233,14 +233,13 @@ hr {
     }
     .side {
         position: fixed;
-        bottom: 2em;
-        flex-direction: row;
-        box-sizing: border-box;
-        width: 100%;
-        max-width: 35em;
-        flex-wrap: wrap;
-        margin: 2em;
-        left: calc(50% - 19.5em);
+        bottom: 1em;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        width: fit-content;
+        left: 50%;
+        transform: translateX(-50%);
+        border-radius: 1rem;
     }
     main {
         flex-direction: column;
@@ -255,12 +254,8 @@ hr {
     .App {
         margin-top: 3em;
     }
-    .side {
-        left: 1em;
-        width: calc(100% - 6em);
-    }
     .mobileBuffer {
-        height: 15em;
+        height: 10em;
     }
     h1 {
         font-size: 2.5em;
@@ -270,12 +265,13 @@ hr {
 @media (max-width: 30em) {
     .miniLinks {
         display: grid;
-        grid-template-columns: 2fr 2fr;
+        grid-template-columns: 1fr 1fr;
+    }
+    .side {
+        grid-template-columns: 1fr 1fr;
+    }
+    .mobileBuffer {
+        height: 13em;
     }
 }
 
-@media (max-width: 22.5em) {
-    .mobileBuffer {
-        height: 20em;
-    }
-}
