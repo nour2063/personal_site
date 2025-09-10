@@ -1,6 +1,6 @@
 import {IoIosDocument, IoLogoLinkedin, IoMdMail} from "react-icons/io";
 import {TbBrandGithubFilled} from "react-icons/tb";
-import CV from "../CV.pdf"
+import CV from "../assets/CV.pdf"
 
 interface LinksProps {
     className?: string

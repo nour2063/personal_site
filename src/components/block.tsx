@@ -2,7 +2,7 @@ import Tilt from "react-parallax-tilt";
 import {About} from "./about";
 import {Links} from "./links";
 import {IoIosArrowBack} from "react-icons/io";
-import photo from "../grass.jpg";
+import photo from "../assets/profile.jpg";
 import {Sidebar} from "./sidebar";
 import React, {MouseEventHandler, useState} from "react";
 
@@ -27,8 +27,8 @@ export function Block({display, hideMenu}: BlockProps) {
                 {active === "about" && (
                     <div className={"panel"}>
                         <Links className={"miniLinks"}/>
-                        <Tilt className={"image"}>
-                            <img src={photo} alt=""/>
+                        <Tilt className={"tilt"}>
+                            <img className={"profile"} src={photo} alt=""/>
                         </Tilt>
                     </div>
                 )}
