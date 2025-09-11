@@ -1,12 +1,28 @@
 /* keyframes */
 
 @keyframes fadeUp {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
+    from {
+        display: none;
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        display: grid;
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 @keyframes fadeDown {
-    from { opacity: 1; transform: translateY(0); }
-    to { opacity: 0; transform: translateY(20px); }
+    from {
+        display: grid;
+        opacity: 1;
+        transform: translateY(0);
+    }
+    to {
+        display: none;
+        opacity: 0;
+        transform: translateY(20px);
+    }
 }
 @keyframes scaleUp {
     from { scale: 1 }
@@ -26,6 +42,10 @@
 }
 
 /* global styles */
+
+html, body {
+    overflow: hidden;
+}
 
 body {
     background-color: black;
@@ -92,7 +112,6 @@ main {
     display: flex;
     justify-content: center;
     position: fixed;
-    z-index: -1;
     height: calc(100dvh - 2px);
     width: calc(100dvw - 2px);
     object-fit: cover;
@@ -100,15 +119,18 @@ main {
     left: 0;
     bottom: 0;
     right: 0;
-    overflow: scroll;
-    -webkit-overflow-scrolling: touch;
     border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
+.background {
+    z-index: -2;
+}
 
 .vignette {
+    z-index: -2;
     background: linear-gradient(180deg, rgba(0, 0, 0, 0.9) 0%, rgba(35, 35, 35, 0.5) 50%, rgba(0, 0, 0, 0.9) 100%);
-    backdrop-filter: blur(5px);
+    overflow: scroll;
+    -webkit-overflow-scrolling: touch;
 }
 
 /* components */
@@ -261,7 +283,7 @@ main {
     background: rgba(205, 255, 240, 0.075);
     border-radius: 1rem;
     bottom: 1em;
-    right: 1.5em;
+    right: 1.5rem;
     font-size: 1.5em;
     padding: 0.5em;
     animation: bigScaleDown 0.2s ease-out forwards;
@@ -269,7 +291,7 @@ main {
 
 .mobileBuffer {
     display: none;
-    height: 10em;
+    height: 7em;
     width: 100%;
 }
 
@@ -351,7 +373,7 @@ main {
         left: unset;
         transform: unset;
         bottom: 6em;
-        right: 2em;
+        right: 1.5rem;
         grid-template-columns: 1fr 1fr;
     }
     .side .button {
