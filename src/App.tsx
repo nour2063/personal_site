@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import './styles/App.css'
-import highRes from "./assets/highRes.jpg";
+// import highRes from "./assets/highRes.jpg";
 import mediumRes from "./assets/mediumRes.jpg";
 import lowRes from "./assets/lowRes.jpg";
 import {Block} from "./components/block";
@@ -20,11 +20,11 @@ export function App() {
             setBackground(mediumRes);
         };
 
-        const hiRes = new Image();
-        hiRes.src = highRes;
-        hiRes.onload = () => {
-            setBackground(highRes);
-        }
+        // const hiRes = new Image();
+        // hiRes.src = highRes;
+        // hiRes.onload = () => {
+        //     setBackground(highRes);
+        // }
     }, []);
 
     const showMenu = () => {
