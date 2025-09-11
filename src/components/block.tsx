@@ -5,6 +5,7 @@ import {IoIosArrowBack} from "react-icons/io";
 import photo from "../assets/profile.jpg";
 import {Sidebar} from "./sidebar";
 import React, {MouseEventHandler} from "react";
+import {Friends} from "./friends";
 
 
 interface BlockProps {
@@ -40,10 +41,9 @@ export function Block({hideMenu, active, setActive, handleBack}: BlockProps) {
                         </div>
                     )}
                     <About className={active === "about" ? "show" : "hide"}/>
-                    <Links className={active === "links" ? "show" : "hide"}/>
                     {/*<Projects className={active === "projects" ? "show" : "hide"}/>*/}
                     {/*<Photos className={active === "photos" ? "show" : "hide"}/>*/}
-                    {/*<Friends className={active === "friends" ? "show" : "hide"}/>*/}
+                    <Friends className={active === "friends" ? "show" : "hide"}/>
                 </div>
                 <div className="mobileBuffer"/>
             </main>
