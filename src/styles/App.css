@@ -132,7 +132,7 @@ main {
 }
 
 .panel {
-    background: rgba(205, 255, 240, 0.03);
+    background: rgba(240, 255, 245, 0.07);
     border-radius: 1rem;
     padding: 1rem;
     height: fit-content;
