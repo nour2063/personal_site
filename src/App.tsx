@@ -5,13 +5,18 @@ import mediumRes from "./assets/mediumRes.jpg";
 import lowRes from "./assets/lowRes.jpg";
 import {Block} from "./components/block";
 import {IoMenu} from "react-icons/io5";
+import {Sidebar} from "./components/sidebar";
 
 
 export function App() {
 
     const [display, setDisplay] = useState<boolean>(false);
-
     const [background, setBackground] = useState(lowRes);
+    const [active, setActive] = useState("about");
+
+    const handleBack = () => {
+        setActive("about");
+    };
 
     useEffect(() => {
         const midRes = new Image();
@@ -37,11 +42,11 @@ export function App() {
 
     return (
         <div className="App">
-            <>
-                <img className={"background"} src={background} alt=""/>
-                <div className={"vignette"}/>
-            </>
-            <Block display={display} hideMenu={hideMenu}/>
+            <img className={"background"} src={background} alt=""/>
+            <div className={"vignette"}>
+                <Block display={display} hideMenu={hideMenu} active={active} setActive={setActive} handleBack={handleBack}/>
+            </div>
+            <Sidebar setActive={setActive} id={display ? "show" : "hide"}/>
             <div className="mobileMenu" onClick={showMenu}><IoMenu/></div>
         </div>
     );

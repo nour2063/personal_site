@@ -4,21 +4,18 @@ import {Links} from "./links";
 import {IoIosArrowBack} from "react-icons/io";
 import photo from "../assets/profile.jpg";
 import {Sidebar} from "./sidebar";
-import React, {MouseEventHandler, useState} from "react";
+import React, {MouseEventHandler} from "react";
 
 
 interface BlockProps {
     display: boolean,
     hideMenu: MouseEventHandler<HTMLDivElement>
+    active: string,
+    setActive:  (key: string) => void
+    handleBack: MouseEventHandler<HTMLDivElement>
 }
 
-export function Block({display, hideMenu}: BlockProps) {
-
-    const [active, setActive] = useState("about");
-
-    const handleBack = () => {
-        setActive("about");
-    };
+export function Block({hideMenu, active, setActive, handleBack}: BlockProps) {
 
     return (
         <div className="block" onClick={hideMenu}>
@@ -34,7 +31,7 @@ export function Block({display, hideMenu}: BlockProps) {
                 )}
             </header>
             <main>
-                <Sidebar setActive={setActive} id={display ? "show" : "hide"}/>
+                <Sidebar setActive={setActive} id={"mainScreen"}/>
                 <div className={"content"}>
                     {active !== "about" && (
                         <div className={"button"} id={"back"} onClick={handleBack}>
