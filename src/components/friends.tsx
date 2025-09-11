@@ -17,6 +17,7 @@ export function Friends({className}: FriendsProps) {
             <div className="button" onClick={() => openLink("https://andreiboghean.com")}>Andrei Boghean</div>
             <div className="button" onClick={() => openLink("https://lukeormiston.com")}>Luke Ormiston</div>
             <div className="button" onClick={() => openLink("https://frasermiller.dev")}>Fraser Miller</div>
+            <div className="button" onClick={() => openLink("https://mrktrnbll.dev")}>Mark Turnbull</div>
             <div className="button" onClick={() => openLink("https://vyrz.dev")}>Benjamin Parsons-Willis</div>
             <div className="button" onClick={() => openLink("https://stefvuck.dev/")}>Stefan Vučković</div>
         </div>
