@@ -6,6 +6,7 @@ import photo from "../assets/profile.jpg";
 import {Sidebar} from "./sidebar";
 import React, {MouseEventHandler} from "react";
 import {Friends} from "./friends";
+import {Projects} from "./projects";
 
 
 interface BlockProps {
@@ -26,7 +27,7 @@ export function Block({hideMenu, active, setActive, handleBack}: BlockProps) {
                     <div className={"panel"}>
                         <Links className={"miniLinks"}/>
                         <Tilt className={"tilt"}>
-                            <img className={"profile"} src={photo} alt=""/>
+                            <img className={"photo"} src={photo} alt=""/>
                         </Tilt>
                     </div>
                 )}
@@ -41,7 +42,7 @@ export function Block({hideMenu, active, setActive, handleBack}: BlockProps) {
                         </div>
                     )}
                     <About className={active === "about" ? "show" : "hide"}/>
-                    {/*<Projects className={active === "projects" ? "show" : "hide"}/>*/}
+                    <Projects className={active === "projects" ? "show" : "hide"}/>
                     {/*<Photos className={active === "photos" ? "show" : "hide"}/>*/}
                     <Friends className={active === "friends" ? "show" : "hide"}/>
                 </div>
