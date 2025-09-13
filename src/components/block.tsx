@@ -26,7 +26,7 @@ export function Block({active, setActive, handleBack}: BlockProps) {
                 {active === "about" && (
                     <div className={"panel"}>
                         <Links className={"miniLinks"}/>
-                        <Tilt className={"tilt"}>
+                        <Tilt className={"profile"}>
                             <img className={"photo"} src={photo} alt=""/>
                         </Tilt>
                     </div>

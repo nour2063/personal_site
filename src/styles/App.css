@@ -139,7 +139,7 @@ main {
         scale: 1.01;
         background: rgba(205, 255, 240, 0.05);
     }
-    .tilt {
+    .tilt, .profile {
         padding-top: 1.5em;
         align-self: start;
         grid-row: 1 / 3;
@@ -293,6 +293,10 @@ main {
     font-size: 1.5em;
 }
 
+p, li {
+    font-size: 0.85em;
+}
+
 /* hover effects */
 
 .side:hover, .panel:hover {
@@ -341,7 +345,7 @@ main {
     display: none;
 }
 
-.tilt {
+.tilt, .profile {
     display: flex;
 }
 
@@ -383,9 +387,6 @@ main {
 /* media queries */
 
 @media (max-width: 70em) {
-    .background, .vignette {
-        border-radius: 2em;
-    }
     .block {
         padding-top: 3em;
         justify-content: flex-start;
@@ -412,7 +413,7 @@ main {
     .miniLinks .button {
         padding: 0.5em;
     }
-    .tilt {
+    .profile {
         display: none;
     }
     .content {
@@ -452,11 +453,11 @@ main {
 }
 
 @media (max-width: 40em) {
+    .background, .vignette {
+        border-radius: 2em;
+    }
     h1 {
         font-size: 2.5em;
-    }
-    p, li {
-        font-size: 0.85em;
     }
     .miniLinks {
         display: grid;
@@ -498,6 +499,9 @@ main {
         }
     }
     .mobileBuffer {
+        display: none;
+    }
+    .tilt {
         display: none;
     }
 }
