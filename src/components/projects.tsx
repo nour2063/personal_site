@@ -184,7 +184,7 @@ export function Projects({className}: ProjectsProps) {
                     <img className={"photo"} src={cp} alt=""/>
                 </Tilt>
                 <div className={"blurb"}>
-                    <h4>Infectious Firefighter Problem Constraint Program</h4>
+                    <h4>Infectious Firefighter Problem Constraint Program Solver</h4>
                     <hr/>
                     <ul>
                         <li>
