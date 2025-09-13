@@ -9,6 +9,7 @@ import neuroArcade from "../assets/projects/neuroArcade.png";
 import oneHandedSwiper from "../assets/projects/oneHandedSwiper.gif";
 import cp from "../assets/projects/cp.gif";
 import solitaire from "../assets/projects/solitaire.jpg";
+import {FiExternalLink} from "react-icons/fi";
 
 interface ProjectsProps {
     className?: string
@@ -22,7 +23,7 @@ export function Projects({className}: ProjectsProps) {
 
     return (
         <div className={className} id={"projects"}>
-            <div className="button">
+            <div className="button" id={"noLink"}>
                 <Tilt className={"tilt"}>
                     <img className={"photo"} src={placeholder} alt=""/>
                 </Tilt>
@@ -42,7 +43,7 @@ export function Projects({className}: ProjectsProps) {
                     <HiDotsHorizontal/>
                 </div>
             </div>
-            <div className="button">
+            <div className="button" id={"noLink"}>
                 <Tilt className={"tilt"}>
                     <img className={"photo"} src={placeholder} alt=""/>
                 </Tilt>
@@ -130,7 +131,7 @@ export function Projects({className}: ProjectsProps) {
                     <IoIosArrowForward/>
                 </div>
             </div>
-            <div className="button">
+            <div className="button" id={"noLink"}>
                 <Tilt className={"tilt"}>
                     <img className={"photo"} src={placeholder} alt=""/>
                 </Tilt>
@@ -150,7 +151,7 @@ export function Projects({className}: ProjectsProps) {
                     <IoIosLock/>
                 </div>
             </div>
-            <div className="button">
+            <div className="button" id={"noLink"}>
                 <Tilt className={"tilt"}>
                     <img className={"photo"} src={placeholder} alt=""/>
                 </Tilt>
@@ -172,7 +173,7 @@ export function Projects({className}: ProjectsProps) {
                         </li>
                     </ul>
                 </div>
-                <div className="link">
+                <div className="link" id={"noLink"}>
                     <h6>2025</h6>
                     <h6>private</h6>
                     <IoIosLock/>
@@ -206,10 +207,10 @@ export function Projects({className}: ProjectsProps) {
                 <div className="link">
                     <h6>2024</h6>
                     <h6>coursework</h6>
-                    <IoIosLock/>
+                    <FiExternalLink />
                 </div>
             </div>
-            <div className="button">
+            <div className="button" id={"noLink"}>
                 <Tilt className={"tilt"}>
                     <img className={"photo"} src={solitaire} alt=""/>
                 </Tilt>

@@ -7,20 +7,20 @@ import {Sidebar} from "./sidebar";
 import React, {MouseEventHandler} from "react";
 import {Friends} from "./friends";
 import {Projects} from "./projects";
+import {Photos} from "./photos";
 
 
 interface BlockProps {
     display: boolean,
-    hideMenu: MouseEventHandler<HTMLDivElement>
     active: string,
     setActive:  (key: string) => void
     handleBack: MouseEventHandler<HTMLDivElement>
 }
 
-export function Block({hideMenu, active, setActive, handleBack}: BlockProps) {
+export function Block({active, setActive, handleBack}: BlockProps) {
 
     return (
-        <div className="block" onClick={hideMenu}>
+        <div className="block">
             <header>
                 <h1>Nour Elfangary</h1>
                 {active === "about" && (
@@ -43,7 +43,7 @@ export function Block({hideMenu, active, setActive, handleBack}: BlockProps) {
                     )}
                     <About className={active === "about" ? "show" : "hide"}/>
                     <Projects className={active === "projects" ? "show" : "hide"}/>
-                    {/*<Photos className={active === "photos" ? "show" : "hide"}/>*/}
+                    <Photos className={active === "photos" ? "show" : "hide"}/>
                     <Friends className={active === "friends" ? "show" : "hide"}/>
                 </div>
                 <div className="mobileBuffer"/>
