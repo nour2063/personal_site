@@ -297,6 +297,10 @@ p, li {
     font-size: 0.85em;
 }
 
+p {
+    text-align: justify;
+}
+
 /* hover effects */
 
 .side:hover, .panel:hover {
@@ -503,6 +507,9 @@ p, li {
     }
     .tilt {
         display: none;
+    }
+    li {
+        text-align: justify;
     }
 }
 
